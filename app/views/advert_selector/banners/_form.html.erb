@@ -24,7 +24,7 @@
       %>
       <%= f.fields_for :helper_items do |f_hi| %>
         <fieldset style="margin-bottom: 20px; border-bottom: 1px solid lightgray;">
-          <% if AdvertSelector::HelperItem.respond_to :_for_select %>
+          <% if AdvertSelector::HelperItem.respond_to? :_for_select %>
             <%= f_hi.input :name, as: :select, collection: AdvertSelector::HelperItem._for_select  %>
           <% else %>
             <%= f_hi.input :name %>
