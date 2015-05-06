@@ -6,13 +6,13 @@ module AdvertSelector
     # GET /banners.json
     def index
       @banners = Banner.all
-  
+
       respond_to do |format|
         format.html # index.html.erb
         format.json { render :json => @banners }
       end
     end
-  
+
     # GET /banners/1
     # GET /banners/1.json
     def show
@@ -25,7 +25,7 @@ module AdvertSelector
       #  format.json { render :json => @banner }
       #end
     end
-  
+
     # GET /banners/new
     # GET /banners/new.json
     def new
@@ -49,17 +49,17 @@ module AdvertSelector
         format.json { render :json => @banner }
       end
     end
-  
+
     # GET /banners/1/edit
     def edit
       @banner = Banner.find(params[:id])
     end
-  
+
     # POST /banners
     # POST /banners.json
     def create
       @banner = Banner.new(banner_params)
-  
+
       respond_to do |format|
         if @banner.save
           format.html { redirect_to @banner, :notice => 'Banner was successfully created.' }
@@ -70,12 +70,12 @@ module AdvertSelector
         end
       end
     end
-  
+
     # PUT /banners/1
     # PUT /banners/1.json
     def update
       @banner = Banner.find(params[:id])
-  
+
       respond_to do |format|
         if @banner.update(banner_params)
           format.html { redirect_to @banner, :notice => 'Banner was successfully updated.' }
@@ -111,7 +111,7 @@ module AdvertSelector
     def destroy
       @banner = Banner.find(params[:id])
       @banner.destroy
-  
+
       respond_to do |format|
         format.html { redirect_to banners_url }
         format.json { head :no_content }
@@ -124,7 +124,7 @@ module AdvertSelector
         .require(:banner)
         .permit(
           :comment, :end_time, :frequency, :name, :placement_id, :start_time, :target_view_count, :priority, :confirmed, :fast_mode,
-          :helper_items_attributes => [:id, :name, :content_for, :position, :content]
+          :helper_items_attributes => [:id, :name, :content_for, :position, :content, :file]
         )
     end
   end
