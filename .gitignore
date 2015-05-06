@@ -12,3 +12,5 @@ test/dummy/.sass-cache
 *.gem
 .bundle
 Gemfile.lock
+*.swp
+*.swo

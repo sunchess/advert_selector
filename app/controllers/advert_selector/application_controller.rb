@@ -3,7 +3,7 @@ module AdvertSelector
 
     before_filter :admin_access_only
     before_filter :set_time_zone
-    before_filter :set_locale
+    #before_filter :set_locale
 
     def admin_access_only
       if AdvertSelector.admin_access_class.send(:admin_access, self)
@@ -19,7 +19,7 @@ module AdvertSelector
     end
 
     def set_locale
-      I18n.locale = :en
+      I18n.locale = I18n.default_locale
     end
 
   end
