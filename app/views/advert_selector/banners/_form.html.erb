@@ -29,7 +29,7 @@
           <%= f_hi.input :position %>
           <%= f_hi.input :content, :input_html => {:rows => (f_hi.object.content_for? ? 5 : 1) } %>
 
-          <% if f_hi.object.respond_to :file  %>
+          <% if f_hi.object.respond_to? :file  %>
             <%= f_hi.input :file, as: :file %>
           <% end %>
 
