@@ -36,6 +36,8 @@
 
           <% if f_hi.object.respond_to? :file  %>
             <%= f_hi.input :file, as: :file %>
+            <br/>
+            <%= f_hi.object.file.try :url %>
           <% end %>
 
         </fieldset>
